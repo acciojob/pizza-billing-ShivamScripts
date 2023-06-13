@@ -19,6 +19,7 @@ public class Pizza {
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
         // your code goes here
+        this.bill = "";
         if(isVeg){
             this.price = vegPizzaPrice;
         }
@@ -53,8 +54,10 @@ public class Pizza {
 
     public void addTakeaway(){
         // your code goes here
-        isPackage = true;
-        this.price += 20;
+        if(!isPackage){
+            isPackage = true;
+            this.price += 20;
+        }
     }
     //Base Price Of The Pizza: 300
     //Extra Cheese Added: 80
